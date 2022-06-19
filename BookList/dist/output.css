@@ -621,6 +621,10 @@ video {
   display: inline;
 }
 
+.table {
+  display: table;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -663,6 +667,11 @@ video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-y-2 {
+  border-top-width: 2px;
+  border-bottom-width: 2px;
 }
 
 .border-red-400 {
@@ -720,6 +729,20 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
