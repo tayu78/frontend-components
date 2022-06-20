@@ -13,7 +13,7 @@
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>My<span class="text-blue-400">Book</span>List</h1>
         </header>
-        <form >
+        <form id="bookForm" >
             <div>
                 <label class="block" for="title">Title</label>
                 <input  class="border-2 w-full h-10" type="text" id="title" >
@@ -21,7 +21,7 @@
                 <input class="border-2 w-full h-10" type="text" id="author" >
                 <label class="block" for="isbn">ISBN#</label>
                 <input class="border-2 w-full h-10 " type="text" id="isbn">
-                <input class="block text-white bg-blue-500 hover:bg-blue-400 w-full h-10 mt-5" type="submit" value="Search">
+                <input class="block text-white bg-blue-500 hover:bg-blue-400 w-full h-10 mt-5" type="submit" value="Add Books">
             </div>
         </form>
         <table class="mt-5 w-full border-y-2">
@@ -30,14 +30,11 @@
                 <th >Author</th>
                 <th ">ISBN</th>
             </thead>
-            <tbody>
-               <tr class="border-y-2">
-                   <td class="py-3">Space Brothers</td>
-                   <td>Chuya Koyama</td>
-                   <td>fgfh</td>
-               </tr>
+            <tbody id="bookList">
             </tbody>
         </table>
     </div>
+
+    <script src="./index.js"></script>
 </body>
 </html>
