@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .alert-success{
-    @apply bg-green-400 text-white mb-3
+    @apply bg-green-400 text-white p-2 mb-3
 }
 
 .alert-danger{
