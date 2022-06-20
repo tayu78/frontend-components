@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn{
-    @apply font-bold py-2 px-4 rounded;
-}
-.btn-blue{
-    @apply bg-blue-500 text-white
+.alert-success{
+    @apply bg-green-400 text-white mb-3
 }
 
-.btn-blue:hover{
-    @apply bg-blue-400
+.alert-danger{
+    @apply bg-red-400 text-white p-2 mb-3
+
 }
