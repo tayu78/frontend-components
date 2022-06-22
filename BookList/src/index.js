@@ -52,12 +52,13 @@ class UI{
 
 class Storage{
     static getDataFromLocalStorage() {
-        
+        return localStorage.getItem("books")? JSON.parse(localStorage.getItem("books")) : []
     }
-
     static addToLocalStorage(books) {
-        // const books = []
-        localStorage.setItem("books", JSON.stringify(books));
+        console.log(books)
+        const booksInStorage = Storage.getDataFromLocalStorage();
+        const newBooks = [...booksInStorage,...books]
+        localStorage.setItem("books", JSON.stringify(newBooks));
         console.log(localStorage)
         
     }
@@ -83,6 +84,7 @@ document.getElementById("bookForm").addEventListener("submit", (e) => {
         UI.addBookList(books)
         Storage.addToLocalStorage(books);
         UI.removeInput()
+        UI.showAlert("successfully added!","success")
     } else { 
         UI.showAlert("plese fill in  all input field", "danger")
     }
