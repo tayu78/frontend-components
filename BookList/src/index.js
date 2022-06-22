@@ -21,11 +21,13 @@ class UI{
             row.className = "border-y-2";
             row.innerHTML = `
             <td class="py-3">${book.title}</td>
-            <td>${book.author}</td>
+            <td >${book.author}</td>
             <td>${book.isbn}</td>
+            <td><button class="delete-btn">delete</button><td>
             `
+            // <td class="w-32">delete<td>
 
-            bookList.appendChild(row)
+            bookList.appendChild(row);
         })
     }
 

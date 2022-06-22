@@ -8,5 +8,8 @@
 
 .alert-danger{
     @apply bg-red-400 text-white p-2 mb-3
+}
 
+.delete-btn{
+    @apply bg-red-500 text-white text-center rounded px-5 py-2 hover:bg-red-400
 }
