@@ -8,9 +8,11 @@ class Book{
 }
 
 class UI{
-    static displayBookList() {
-        if (localStorage.getItem("books")) {
-            UI.addBookList(JSON.parse(localStorage.getItem("books")))
+    static displayBookList(key) {
+        console.log("type: ",typeof key);
+
+        if (localStorage.getItem(key)) {
+            UI.addBookList(JSON.parse(localStorage.getItem(key)))
         }
     }
 
@@ -53,12 +55,11 @@ class UI{
 
 
 class Storage{
-    static getDataFromLocalStorage() {
-        return localStorage.getItem("books")? JSON.parse(localStorage.getItem("books")) : []
+    static getDataFromLocalStorage(key) {
+        return localStorage.getItem(key)? JSON.parse(localStorage.getItem(key)) : []
     }
     static addToLocalStorage(books) {
-        console.log(books)
-        const booksInStorage = Storage.getDataFromLocalStorage();
+        const booksInStorage = Storage.getDataFromLocalStorage("books");
         const newBooks = [...booksInStorage,...books]
         localStorage.setItem("books", JSON.stringify(newBooks));
         console.log(localStorage)
@@ -72,7 +73,7 @@ class Storage{
 }
 
 // // Event display book
-document.addEventListener('DOMContentLoaded', UI.displayBookList())
+document.addEventListener('DOMContentLoaded', UI.displayBookList("books"))
 
 // // Event add a book
 document.getElementById("bookForm").addEventListener("submit", (e) => {
