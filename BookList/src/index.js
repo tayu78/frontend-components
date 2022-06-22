@@ -9,19 +9,9 @@ class Book{
 
 class UI{
     static displayBookList() {
-        const books = [
-            {
-                title: "Naruto",
-                author: "Masashi Kishimoto",
-                isbn: 1234
-            },
-            {
-                title: "Space Brothors",
-                author: "Chuya Koyama",
-                isbn: 5678
-            }
-        ]
-        UI.addBookList(books)
+        if (localStorage.getItem("books")) {
+            UI.addBookList(JSON.parse(localStorage.getItem("books")))
+        }
     }
 
     static addBookList(books) {
@@ -60,12 +50,27 @@ class UI{
 }
 
 
-// class Storage{
+class Storage{
+    static getDataFromLocalStorage() {
+        
+    }
 
-// }
+    static addToLocalStorage(books) {
+        // const books = []
+        localStorage.setItem("books", JSON.stringify(books));
+        console.log(localStorage)
+        
+    }
+
+    
+    static removeFromLocalStorage() {
+        
+    }
+}
 
 // // Event display book
 document.addEventListener('DOMContentLoaded', UI.displayBookList())
+
 // // Event add a book
 document.getElementById("bookForm").addEventListener("submit", (e) => {
     e.preventDefault()
@@ -76,6 +81,7 @@ document.getElementById("bookForm").addEventListener("submit", (e) => {
         const book = new Book(title, author, isbn);
         const books = [book]
         UI.addBookList(books)
+        Storage.addToLocalStorage(books);
         UI.removeInput()
     } else { 
         UI.showAlert("plese fill in  all input field", "danger")
