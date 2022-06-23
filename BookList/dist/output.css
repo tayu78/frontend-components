@@ -690,6 +690,10 @@ video {
   color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .alert-success {
   margin-bottom: 0.75rem;
   --tw-bg-opacity: 1;

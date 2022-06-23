@@ -9,8 +9,6 @@ class Book{
 
 class UI{
     static displayBookList(key) {
-        console.log("type: ",typeof key);
-
         if (localStorage.getItem(key)) {
             UI.addBookList(JSON.parse(localStorage.getItem(key)))
         }
@@ -25,12 +23,14 @@ class UI{
             <td class="py-3">${book.title}</td>
             <td >${book.author}</td>
             <td>${book.isbn}</td>
-            <td><button class="delete-btn">delete</button><td>
+            <td><button class="delete-btn">delete</button></td>
             `
-            // <td class="w-32">delete<td>
-
             bookList.appendChild(row);
         })
+    }
+
+    static removeFromDOM(el) {
+        el.parentNode.parentNode.remove()
     }
 
     static removeInput() {
@@ -62,13 +62,13 @@ class Storage{
         const booksInStorage = Storage.getDataFromLocalStorage("books");
         const newBooks = [...booksInStorage,...books]
         localStorage.setItem("books", JSON.stringify(newBooks));
-        console.log(localStorage)
-        
     }
 
     
-    static removeFromLocalStorage() {
-        
+    static removeFromLocalStorage(key, isbn) {
+        const currentBooks = Storage.getDataFromLocalStorage(key)
+        const newBooks = currentBooks.filter((el) => el.isbn !== isbn);
+        localStorage.setItem("books",JSON.stringify(newBooks))
     }
 }
 
@@ -94,3 +94,13 @@ document.getElementById("bookForm").addEventListener("submit", (e) => {
 })
 
 // // event remove a book
+document.getElementById("bookList").addEventListener("click",(e) => {
+    if (e.target.classList.contains("delete-btn")) {
+        UI.removeFromDOM(e.target);
+        
+        console.log(typeof e.target.parentNode.previousElementSibling.textContent)
+
+        Storage.removeFromLocalStorage("books",e.target.parentNode.previousElementSibling.textContent);
+
+    }
+})
