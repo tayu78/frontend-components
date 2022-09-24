@@ -117,5 +117,4 @@ document.getElementById("search-player-input").addEventListener("keyup", (e) => 
             playerList[i].style.display = "none"
         }
     }
-
 })
