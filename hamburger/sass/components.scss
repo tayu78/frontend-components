@@ -60,23 +60,26 @@ nav {
             background-color: black;
             transition: .3s ease ;
         }
+        
         &.active {
             .bar{
                background-color: white;
-            }
-            .bar:nth-child(2){
-                opacity: 0;
+
+                &:nth-child(2){
+                    opacity: 0;
+                    }
+
+                &:first-child{
+                    // bar のheightとmargin足した分上にあげる
+                    transform: translateY(10px) rotate(45deg);
+                    color: blue;
+                }
+                &:last-child{
+                    transform: translateY(-10px) rotate(-45deg);
+                }
 
             }
-
-            .bar:first-child{
-                // bar のheightとmargin足した分上にあげる
-                transform: translateY(10px) rotate(45deg);
-                color: blue;
-            }
-            .bar:last-child{
-                transform: translateY(-10px) rotate(-45deg);
-            }
+           
         }
 
 
