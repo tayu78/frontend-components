@@ -70,7 +70,7 @@ nav {
                     }
 
                 &:first-child{
-                    // bar のheightとmargin足した分上にあげる
+                    // bar のheightとmargin足した分上に下げる
                     transform: translateY(10px) rotate(45deg);
                     color: blue;
                 }
