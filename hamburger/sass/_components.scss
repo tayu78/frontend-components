@@ -27,18 +27,18 @@ nav {
         @include for-sm-screen{
             position: fixed;
             top: 0;
-             left: -100%;
+            left: -100%;
+            width: 100vw;
+            height: 100vh;
+            padding-top: 2rem;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 2rem;
+            align-items: center;
+            background-color: black;
+            color: white;
             &.active{
                 left: 0;
-                width: 100vw;
-                height: 100vh;
-                padding-top: 2rem;
-                flex-direction: column;
-                justify-content: flex-start;
-                gap: 2rem;
-                align-items: center;
-                background-color: black;
-                color: white;
             }
            
 

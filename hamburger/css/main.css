@@ -78,9 +78,6 @@ nav ul {
     position: fixed;
     top: 0;
     left: -100%;
-  }
-  nav ul.active {
-    left: 0;
     width: 100vw;
     height: 100vh;
     padding-top: 2rem;
@@ -90,6 +87,9 @@ nav ul {
     align-items: center;
     background-color: black;
     color: white;
+  }
+  nav ul.active {
+    left: 0;
   }
 }
 nav .hamburger {
